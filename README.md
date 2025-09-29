@@ -1,4 +1,4 @@
-# Assignment 3: Go-Back-N ARQ Protocol Simulation
+# Go-Back-N ARQ Protocol Simulation
 
 ## Overview
 
@@ -15,18 +15,18 @@ This assignment simulates a reliable data transmission protocol using Go-Back-N 
 ## Features
 
 - Packet segmentation from an input file.
-- Sliding window-based sender with configurable window size.
+- Sliding window based sender with configurable window size.
 - Acknowledgment tracking and retransmission logic.
-- Packet drop simulation every n-th packet.
-- Logging of all major sender-side events.
+- Packet drop simulation every nth packet.
+- Logging of all major sender side events.
 - Threaded architecture using Python's `threading` and `queue` modules.
 
 ## How It Works
 
-- The sender reads from an input file and breaks the content into fixed-length packets.
+- The sender reads from an input file and breaks the content into fixed length packets.
 - It sends up to `window_size` packets at a time.
 - A packet is marked for retransmission if an acknowledgment is not received before `timeout_interval`.
-- Every n-th packet (as defined by `nth_packet`) is simulated to drop, forcing retransmission.
+- Every nth packet (as defined by `nth_packet`) is simulated to drop, forcing retransmission.
 - Events are logged consistently using the provided logger.
 
 ## Running the Simulation
@@ -42,7 +42,7 @@ This assignment simulates a reliable data transmission protocol using Go-Back-N 
 - `packet_len`: Number of characters per packet
 - `nth_packet`: Frequency of dropped packets (simulated)
 - `timeout_interval`: Timeout duration for retransmissions
-- `send_queue` and `ack_queue`: Queues to simulate the sender-receiver channel
+- `send_queue` and `ack_queue`: Queues to simulate the sender receiver channel
 - `logger`: Logger instance for tracking events
 
 ### Example Usage
@@ -65,8 +65,8 @@ sender = GBN_sender(
 - Adheres to the Go-Back-N ARQ protocol.
 - Logs must be formatted consistently to allow result tracking.
 - Use timeouts and exception handling to prevent blocking and crashes.
-- Designed for educational simulation purposes, not real-time transmission.
+- Designed for educational simulation purposes, not real time transmission.
 
 ## License
 
-This project is part of CS 3357A - Computer Networks I at Western University. For academic use only.
+This project is part of CS 3357A, Assignment 3 - Computer Networks I at Western University. For academic use only.
